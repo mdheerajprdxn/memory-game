@@ -144,6 +144,9 @@ ul {
 li {
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 /*=================================
