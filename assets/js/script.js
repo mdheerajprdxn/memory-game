@@ -93,6 +93,7 @@ window.onload = function () {
 
   function checkMatch() {
     let turnedTiles = document.querySelectorAll("li[turned='true']");
+
     if (turnedTiles.length > 1) {
       console.log("in check");
       if (
@@ -103,7 +104,24 @@ window.onload = function () {
         turnedTiles[1].setAttribute("done", true);
         turnedTiles[0].setAttribute("turned", false);
         turnedTiles[1].setAttribute("turned", false);
+        turnedTiles[0].classList.add("done");
+        turnedTiles[1].classList.add("done");
+        checkFinish();
       }
+    }
+  }
+
+  let restart = document.querySelector("#restart");
+  console.log(restart);
+  restart.addEventListener("click", () => {
+    location.reload();
+  });
+
+  function checkFinish() {
+    let doneTiles = document.querySelectorAll("li[done='true']");
+    let modal = document.querySelector(".modal");
+    if (doneTiles.length == 12) {
+      modal.classList.remove("hidden");
     }
   }
 };
