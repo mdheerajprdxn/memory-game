@@ -1,10 +1,16 @@
 /* Author: 
 
 */
+import { startTimer, setGameover } from "./timer.js";
+import { timer, restart } from "./elements.js";
+
 window.onload = function () {
-  let game = document.querySelector(".game");
-  //   console.log(game);
-  let tileList = document.createElement("ul");
+  let game = document.querySelector(".game"),
+    tileList = document.createElement("ul"),
+    gameOver = false;
+  //   Start Timer
+  startTimer(60, timer);
+
   game.append(tileList);
   let arr = {};
   for (let i = 1; i < 7; i++) {
@@ -111,17 +117,19 @@ window.onload = function () {
     }
   }
 
-  let restart = document.querySelector("#restart");
-  console.log(restart);
-  restart.addEventListener("click", () => {
-    location.reload();
+  restart.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      location.reload();
+    });
   });
 
   function checkFinish() {
     let doneTiles = document.querySelectorAll("li[done='true']");
-    let modal = document.querySelector(".modal");
+    let modal = document.querySelector(".win-modal");
     if (doneTiles.length == 12) {
       modal.classList.remove("hidden");
+      gameOver = true;
+      setGameover();
     }
   }
 };
