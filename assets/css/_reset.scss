@@ -1,6 +1,8 @@
+@charset "utf-8";
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
+
 /* 1.1. Eric Meyers Reset
    http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -28,14 +30,11 @@ footer, header, hgroup, menu, nav, section {
 }
 
 /* Force scrollbar */
-html {
-  overflow-y: scroll;
-}
+html { overflow-y: scroll; }
 
 /* Align radios and text inputs with their label */
-input[type='radio'] {
-  vertical-align: text-bottom;
-}
+
+input[type='radio'] { vertical-align: text-bottom; }
 
 /* Hand cursor on clickable input elements */
 label,
@@ -51,9 +50,7 @@ strong {
   font-size: inherit;
 }
 
-em {
-  font-style: italic;
-}
+em { font-style: italic; }
 
 img {
   width: 100%;
@@ -69,40 +66,30 @@ sup {
   line-height: 0;
 }
 
-sup {
-  top: -.7em;
-}
-
-sub {
-  bottom: -.25em;
-}
+sup { top: -.7em; }
+sub { bottom: -.25em; }
 
 /* 1.2. Clear Fix
    ========================== */
+
 .cf:before,
 .cf:after {
   display: table;
   content: " ";
 }
 
-.cf:after {
-  clear: both;
-}
-
-.cf {
-  *zoom: 1;
-}
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
 
 /*for all*/
 body {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: sans-serif;
 }
 
-a {
+a { 
   display: inline-block;
-  text-decoration: none;
+  text-decoration: none; 
 }
 
 li {
@@ -113,54 +100,6 @@ li {
 /*for wrapper*/
 .wrapper {
   max-width: 1360px;
-  width: 86%;
+  width: 86%; 
   margin: 0 auto;
 }
-
-/*=================================
-  Header styling starts here
-=================================*/
-h1 {
-  font-size: 50px;
-  text-transform: capitalize;
-  text-align: center;
-}
-
-.game {
-  max-width: 700px;
-}
-
-ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-li {
-  -ms-flex-preferred-size: 30%;
-      flex-basis: 30%;
-}
-
-/*=================================
-  Header styling ends here
-=================================*/
-/*=================================
-  main styling starts here
-=================================*/
-/*=================================
-  main styling ends here
-=================================*/
-/*=================================
-  footer styling starts here
-=================================*/
-/*=================================
-  footer styling ends here
-=================================*/
-/*media query starts*/
-/*media query for 995px starts here*/
-/*# sourceMappingURL=style.css.map */
