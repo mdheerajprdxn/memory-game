@@ -6,9 +6,13 @@
 =================================*/
 
 h1 {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
     font-size: 50px;
     text-transform: capitalize;
     text-align: center;
+    background-color: #555;
+    color: #fff;
 }
 
 .game {
@@ -18,7 +22,7 @@ h1 {
 ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 li {
@@ -27,13 +31,58 @@ li {
     // width: 300px;
     // background-image: url('../images/1.jpg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+}
+
+.tile {
+    margin-bottom: 10px;
+    border: 5px solid #fff;
+    border-radius: 15px;
+    box-sizing: border-box;
+    cursor: pointer;
 }
 
 .done {
-    border: 2px solid rgb(80, 168, 80);
+    border: 5px solid rgb(131, 224, 131);
 }
 
+.hidden {
+    display: none;
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-inner {
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    span {
+        font-size: 30px;
+        text-transform: uppercase;
+        color: rgb(131, 224, 131);
+    }
+    button {
+        margin:15px auto;
+        padding: 10px 20px;
+        display: block;
+        text-transform: uppercase;
+        background-color: rgb(100, 184, 100);
+        color: #fff;
+        border: none;
+    }
+}
 
 /*=================================
   Header styling ends here
