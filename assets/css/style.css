@@ -131,7 +131,7 @@ h1 {
 }
 
 .game {
-  max-width: 700px;
+  max-width: 1200px;
 }
 
 ul {
@@ -145,11 +145,12 @@ ul {
 }
 
 li {
-  -ms-flex-preferred-size: 30%;
-      flex-basis: 30%;
+  -ms-flex-preferred-size: 22%;
+      flex-basis: 22%;
   height: 200px;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 .tile {
@@ -169,7 +170,8 @@ li {
   display: none;
 }
 
-.modal {
+.win-modal,
+.lose-modal {
   position: absolute;
   top: 0;
   left: 0;
@@ -178,7 +180,7 @@ li {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-inner {
+.win {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 30px;
@@ -191,20 +193,61 @@ li {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-inner span {
+.win span {
   font-size: 30px;
   text-transform: uppercase;
-  color: #83e083;
 }
 
-.modal-inner button {
+.win button {
   margin: 15px auto;
   padding: 10px 20px;
   display: block;
   text-transform: uppercase;
-  background-color: #64b864;
   color: #fff;
   border: none;
+}
+
+.win span {
+  color: #83e083;
+}
+
+.win button {
+  background-color: #64b864;
+}
+
+.lose {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 30px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.lose span {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.lose button {
+  margin: 15px auto;
+  padding: 10px 20px;
+  display: block;
+  text-transform: uppercase;
+  color: #fff;
+  border: none;
+}
+
+.lose span {
+  color: #ca6060;
+}
+
+.lose button {
+  background-color: #c7535d;
 }
 
 /*=================================
