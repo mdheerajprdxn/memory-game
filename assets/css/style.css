@@ -149,6 +149,10 @@ li {
   background-size: contain;
 }
 
+.done {
+  border: 2px solid #50a850;
+}
+
 /*=================================
   Header styling ends here
 =================================*/
