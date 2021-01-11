@@ -49,8 +49,7 @@ li {
     display: none;
 }
 
-.win-modal,
-.lose-modal {
+.gameover-modal {
     position: absolute;
     top: 0;
     left: 0;
@@ -85,7 +84,6 @@ li {
 .win {
    @include modal-inner();
     span {
-      
         color: rgb(131, 224, 131);
     }
     button {
