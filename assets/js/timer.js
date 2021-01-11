@@ -1,3 +1,5 @@
+import { showGameOver } from "./showGameOver.js";
+
 let gameOver = false;
 
 export function setGameover() {
@@ -21,20 +23,14 @@ export function startTimer(duration, display) {
     display.textContent = minutes + ":" + seconds;
 
     if (--timer < 0) {
-      endTimer();
+      showGameOver("lose");
       gameOver = true;
     }
   }, 1000);
 }
 
 window.onload = function () {
-  var fiveMinutes = 60,
+  var timeLimit = 60,
     display = document.querySelector("#time");
-  startTimer(fiveMinutes, display);
+  startTimer(timeLimit, display);
 };
-
-function endTimer() {
-  let modal = document.querySelector(".lose-modal");
-
-  modal.classList.remove("hidden");
-}

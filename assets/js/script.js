@@ -2,12 +2,12 @@
 
 */
 import { startTimer, setGameover } from "./timer.js";
-import { timer, restart } from "./elements.js";
+import { timer, game } from "./elements.js";
+import { showGameOver } from "./showGameOver.js";
 
 window.onload = function () {
-  let game = document.querySelector(".game"),
-    tileList = document.createElement("ul"),
-    gameOver = false;
+  let tileList = document.createElement("ul");
+
   //   Start Timer
   startTimer(60, timer);
 
@@ -16,7 +16,8 @@ window.onload = function () {
   for (let i = 1; i < 7; i++) {
     arr[i] = i;
   }
-  console.log(arr);
+
+  //   Create the object wich decides the layout of the tiles
   function generateAnswer() {
     for (const [key, value] of Object.entries(arr)) {
       arr[key] = [];
@@ -32,10 +33,10 @@ window.onload = function () {
         }
         arr[key].push(randomNo);
       }
-      //   console.log(arr);
     }
     console.log("full array", arr);
   }
+
   generateAnswer();
 
   function ifDuplicate(no) {
@@ -48,6 +49,7 @@ window.onload = function () {
     return duplicate;
   }
 
+  //   render the tiles
   let createTiles = () => {
     for (let i = 0; i < 12; i++) {
       let tile = document.createElement("li");
@@ -87,6 +89,7 @@ window.onload = function () {
     tile.style.backgroundImage = `url(./assets/images/${img}.jpg)`;
   }
 
+  //   reset tiles after two tiles are turned
   function resetTiles() {
     let tiles = document.querySelectorAll(".tile");
     tiles.forEach((tile) => {
@@ -97,6 +100,7 @@ window.onload = function () {
     });
   }
 
+  //   check for matching tiles
   function checkMatch() {
     let turnedTiles = document.querySelectorAll("li[turned='true']");
 
@@ -117,17 +121,11 @@ window.onload = function () {
     }
   }
 
-  restart.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      location.reload();
-    });
-  });
-
+  //   check if all tiles are matched
   function checkFinish() {
     let doneTiles = document.querySelectorAll("li[done='true']");
-    let modal = document.querySelector(".win-modal");
     if (doneTiles.length == 12) {
-      modal.classList.remove("hidden");
+      showGameOver("win");
       gameOver = true;
       setGameover();
     }
